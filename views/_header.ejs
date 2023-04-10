@@ -60,12 +60,15 @@
 </head>
 
 <body>
+    <% if(locals.user){  %>
     <nav class="navbar background">
         <ul class="nav-list">
-            <li><a href="/users/login">Login</a></li>
+           
             <li><a href="/users/logout">Logout</a></li>
+            
         </ul>
     </nav>
+    <% } %>
 </body>
 
 </html>

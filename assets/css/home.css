@@ -1,0 +1,15 @@
+#parentContainer
+{
+    width: 100vw;
+    height: 100vh;
+    background-image:url('https://png.pngtree.com/png-clipart/20221016/original/pngtree-employment-agency-for-recruitment-or-placement-job-service-with-skilled-and-png-image_8696734.png');
+    background-attachment:fixed;
+}
+
+#headerContainer
+{
+    display: flex;
+    column-gap: 15px;
+    justify-content: center;
+    margin-right: 20px;
+}

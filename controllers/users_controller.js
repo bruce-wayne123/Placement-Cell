@@ -4,7 +4,7 @@ module.exports.login = function (req, resp) {
         let dashboardURL = `/users/dashboard/${req.user.id}`;
         return resp.redirect(dashboardURL);
     }
-    return resp.render("login", { title: "Login" });
+    return resp.render("login", { title: "" });
 }
 module.exports.signup = function (req, resp) {
     return resp.render("signup", { title: "Sign Up" });
@@ -26,7 +26,7 @@ module.exports.create = async function (req, resp) {
             console.log("Employee already exists - Unable to create");
             return resp.redirect("/");
         }
-        return resp.render("login", { title: "Log In" });
+        return resp.render("login", { title: "" });
 
     } catch (error) {
         console.log(error);
