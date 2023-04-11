@@ -19,7 +19,7 @@ module.exports.create = async function (req, resp) {
         }
 
         let employee = await Employee.find({ email: requestBody.email });
-        if (employee) {
+        if (!employee) {
             await Employee.create({ name: requestBody.name, email: requestBody.email, password: requestBody.password });
         }
         else {

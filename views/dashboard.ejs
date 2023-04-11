@@ -3,7 +3,18 @@
         <%= locals.user.name %>
     </h2>
 <% } %> -->
+<link rel="stylesheet" type="text/css" href="/assets/css/dashboard.css">
+<div id="container">
+    <h2>
+        <%= locals.user.name %>
+    </h2>
+    <div id="fabIcon">
+        <button id="addStudent" class="btn btn-primary"
+            onclick="window.location.href='http://localhost:8000/students/addstudent';">Add Student</button>
+    </div>
+    <ul id="studentsListView" style="list-style-type:
+    none;margin: 20px;"> 
 
-<h2>
-    <%= locals.user.name %>
-</h2>
+    </ul>
+</div>
+<script src="/assets/js/dashboard.js" type='text/javascript'></script>
