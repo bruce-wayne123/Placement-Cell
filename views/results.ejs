@@ -1,0 +1,39 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/results.css">
+<div id="container">
+    <div id="headerLabelContainer" class="row">
+        <div class="col-3">
+            Student Name
+        </div>
+        <div class="col-3">
+            DSA
+        </div>
+        <div class="col-3">
+            Web Development
+        </div>
+        <div class="col-3">
+            React
+        </div>
+    </div>
+    <form id="resultsForm" class="row" method="post" action="#">
+        <label id="studentIdLabel" hidden>
+            <%= student.id %>
+        </label>
+        <div class="col-3">
+            <%= student.name %>
+        </div>
+        <div class="col-3">
+            <input type="text" name="dsa" required />
+        </div>
+        <div class="col-3">
+            <input type="text" name="webd" required />
+        </div>
+        <div class="col-3">
+            <input type="text" name="react" required />
+        </div>
+</div>
+<div id="buttonContainer">
+    <button id="submitButton" type="button" onclick="SubmitData()" class="btn btn-primary">Submit</button>
+</div>
+
+</div>
+<script src="/assets/js/results.js" type='text/javascript'></script>

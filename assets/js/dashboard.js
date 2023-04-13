@@ -15,11 +15,12 @@ function addToList(student) {
     const li = document.createElement("li");
 
     li.innerHTML = `<li>
-    <div style="display:flex;justify-content: space-around; align-items: center; 
-                border: 1px solid black; border-radius: 5px; padding: 15px;margin-top: 10px;width: 900px;  border-radius: 25px;">
-                <a id=${student._id}  style="font-size: 17px;width: 45%" text-decoration:none;>${student.name}</a>
-                <a id=${student.id}  style="font-size: 17px;width: 45%" text-decoration:none;>${student.batch}</a>
-                <a id=${student.id}  style="font-size: 17px;width: 10%" text-decoration:none;>${student.college}</a>
+    <div style="display:flex;justify-content: center;
+                border-top: 1px solid black; border-bottom: 1px solid black; padding: 10px;width: 500px;">
+                <a id=${student._id}  style="font-size: 14px;width: 35%" href="/results/${student._id}">${student.name}</a>
+                <a id=${student.id}  style="font-size: 14px;width: 35%" text-decoration:none;>${student.batch}</a>
+                <a id=${student.id}  style="font-size: 14px;width: 30%" text-decoration:none;>${student.college}</a>
+              
                 <div> 
     </li>`;
     studentsListView.append(li);

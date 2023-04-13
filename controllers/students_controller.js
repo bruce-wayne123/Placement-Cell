@@ -26,11 +26,8 @@ module.exports.create = async function (req, resp) {
         else {
             console.log("Student already exists - Unable to create");
         }
-        var employee = await Employee.findById(req.params.id);
-        if (employee) {
-            return resp.render('dashboard', { title: "Dashboard", user: employee });
-        }
 
+        return resp.render('dashboard', { title: "Dashboard"});
     } catch (error) {
         console.log(error);
     }

@@ -53,8 +53,5 @@ module.exports.destroySession = function (req, resp) {
 };
 
 module.exports.dashboard = async function (req, resp) {
-    var employee = await Employee.findById(req.params.id);
-    if (employee) {
-        return resp.render('dashboard', { title: "Dashboard", user: employee });
-    }
+    return resp.render('dashboard', { title: "Dashboard"});
 }

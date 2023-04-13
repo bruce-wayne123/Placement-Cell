@@ -1,0 +1,38 @@
+#container
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 10px;
+    justify-content: space-evenly;
+}
+
+#headerLabelContainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+
+#resultsForm
+{
+    display: flex;
+    align-items: center;
+   text-align: center;
+   margin-top: 30px;
+}
+
+#submitButton
+{
+    margin-top: 30px;
+    width: 200px;
+}
+
+#buttonContainer
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
