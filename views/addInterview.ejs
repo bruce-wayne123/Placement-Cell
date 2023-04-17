@@ -1,10 +1,9 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/add-interview.css">
 <form id="createInterviewForm" action="/interviews/create" method="post">
-    <input type="text" name="companyname" placeholder="Company name" class="form-control" required />
+    <input type="text" name="companyName" placeholder="Company name" class="form-control" required />
 
     <div id="interviewDetailsContainer1">
         <label for="positionList">Position : </label>
-
         <select name="position" id="positionList">
             <option value="BD">Backend Developer</option>
             <option value="FD">Frontend Developer</option>
@@ -15,12 +14,12 @@
 
     </div>
     <div id="interviewDetailsContainer2">
-        <label for="studentListView">Students :</label>
+        <label for="studentListView">Students :</label> 
         <select name="student" id="studentListView" multiple>
             <% for(student of students){ %>
-                <option value=" <%= student.id %>">
+                <option name=" <%= student.id %>">
                 <%= student.name %>
-                </option       
+                </option>       
             <% } %>
         </select>
     </div>

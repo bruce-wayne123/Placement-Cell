@@ -11,19 +11,10 @@ const Interview = require("../models/interview");
 
 module.exports.create = async function (req, resp) {
     let requestBody = req.body;
+    console.log(requestBody);
     try {
-        let student = await Student.find({ email: requestBody.email });
-        if (student) {
-            await Student.create({
-                name: requestBody.name, email: requestBody.email,
-                batch: requestBody.batch, college: requestBody.college, placementStatus: "Didn’t Attempt"
-            });
-        }
-        else {
-            console.log("Student already exists - Unable to create");
-        }
-
-        return resp.render('dashboard', { title: "Dashboard" });
+        //await Interview.create({ requestBody });
+       
     } catch (error) {
         console.log(error);
     }
@@ -36,6 +27,5 @@ module.exports.interview = async function (req, resp) {
 
 module.exports.addInterview = async function (req, resp) {
     let studentsList = await Student.find({});
-    console.log(studentsList);
     return resp.render("addInterview", { title: "Add Interview", students: studentsList });
 }
