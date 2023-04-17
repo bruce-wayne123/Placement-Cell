@@ -1,10 +1,7 @@
 async function SubmitData() {
     try {
         let resultsForm = $('#resultsForm');
-        var studentLabel=$('#studentIdLabel');
-        let studentId =studentLabel.text();
-        let apiUrl = `/results/submitResult/?id=${studentId}`;
-        console.log(apiUrl);
+        let apiUrl = `/results/submitResult`;
         let formData = resultsForm.serialize();
         $.ajax({
             type: 'post',

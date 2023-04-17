@@ -15,20 +15,18 @@
         </div>
     </div>
     <form id="resultsForm" class="row" method="post" action="#">
-        <label id="studentIdLabel" hidden>
-            <%= student.id %>
-        </label>
+        <input type="text" name="studentId" value="<%= student.id %>"  hidden/>
         <div class="col-3">
             <%= student.name %>
         </div>
         <div class="col-3">
-            <input type="text" name="dsa" required />
+            <input type="text" name="dsa" required value="<%= result.dsa %>"/>
         </div>
         <div class="col-3">
-            <input type="text" name="webd" required />
+            <input type="text" name="webd" required value="<%= result.webd %>"/>
         </div>
         <div class="col-3">
-            <input type="text" name="react" required />
+            <input type="text" name="react" required value="<%= result.react %>"/>
         </div>
 </div>
 <div id="buttonContainer">
