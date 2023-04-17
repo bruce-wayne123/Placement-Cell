@@ -1,0 +1,29 @@
+<link rel="stylesheet" type="text/css" href="/assets/css/add-interview.css">
+<form id="createInterviewForm" action="/interviews/create" method="post">
+    <input type="text" name="companyname" placeholder="Company name" class="form-control" required />
+
+    <div id="interviewDetailsContainer1">
+        <label for="positionList">Position : </label>
+
+        <select name="position" id="positionList">
+            <option value="BD">Backend Developer</option>
+            <option value="FD">Frontend Developer</option>
+            <option value="FSD">Full Stack Developer</option>
+        </select>
+        <label for="interviewDate">Interview Date :</label>
+        <input type="date" id="interviewDate" name="interviewDate">
+
+    </div>
+    <div id="interviewDetailsContainer2">
+        <label for="studentListView">Students :</label>
+        <select name="student" id="studentListView" multiple>
+            <% for(student of students){ %>
+                <option value=" <%= student.id %>">
+                <%= student.name %>
+                </option       
+            <% } %>
+        </select>
+    </div>
+    <input type="text" name="careerpagelink" placeholder="Company career page link" class="form-control" />
+    <input id="addInterviewButton" class="btn btn-primary" type="submit" value="Submit" />
+</form>

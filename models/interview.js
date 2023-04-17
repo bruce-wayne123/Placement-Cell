@@ -12,11 +12,9 @@ const interviewSchema = new mongoose.Schema(
         interviewDate: {
             type: Date,
             required: true,
-            unique: true
         },
         careerpagelink: {
             type: String,
-            required: true,
         },
         student: [{
             type: mongoose.Schema.Types.ObjectId, ref: "Student"

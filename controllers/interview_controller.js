@@ -35,5 +35,7 @@ module.exports.interview = async function (req, resp) {
 }
 
 module.exports.addInterview = async function (req, resp) {
-    return resp.render("addInterview", { title: "Add Interview" });
+    let studentsList = await Student.find({});
+    console.log(studentsList);
+    return resp.render("addInterview", { title: "Add Interview", students: studentsList });
 }
