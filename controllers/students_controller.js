@@ -20,7 +20,7 @@ module.exports.create = async function (req, resp) {
         if (student) {
             await Student.create({
                 name: requestBody.name, email: requestBody.email,
-                batch: requestBody.batch, college: requestBody.college, placementStatus: false
+                batch: requestBody.batch, college: requestBody.college, placementStatus: "Didn’t Attempt"
             });
         }
         else {

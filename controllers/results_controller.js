@@ -30,8 +30,6 @@ module.exports.submitResults = async function (req, resp) {
         else {
             result = await Results.create({ dsa: req.body.dsa, webd: req.body.webd, react: req.body.react, student: req.body.studentId });
         }
-        let student = await Student.findOne({ _id: req.body.studentId });
-        return resp.render("results", { title: "Results", result: result, student: student });
     } catch (error) {
         console.log("Error in finding results", error);
     }

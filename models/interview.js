@@ -5,19 +5,24 @@ const interviewSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        position: {
+            type: String,
+            required: true,
+        },
         interviewDate: {
             type: Date,
             required: true,
             unique: true
         },
-        interviewStatus:
-        {
-            type: Boolean,
+        careerpagelink: {
+            type: String,
             required: true,
-        }
+        },
+        student: [{
+            type: mongoose.Schema.Types.ObjectId, ref: "Student"
+        }]
     },
     { timestamps: true }
 );
-
 const Interview = mongoose.model("Interview", interviewSchema);
 module.exports = Interview;

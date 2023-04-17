@@ -20,7 +20,7 @@ const studentSchema = new mongoose.Schema(
         },
         placementStatus:
         {
-            type: Boolean,
+            type: String,
             required: true,
         }
     },

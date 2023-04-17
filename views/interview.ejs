@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/css/interview-list">
+<button id="addStudent" class="btn btn-primary"
+    onclick="window.location.href='http://localhost:8000/interviews/addInterview';">Add Interview</button>
+<div id="interview-list-container">
+    <ul>
+        <% for(interview of interviews){ %>
+<li>
+<%= interview.companyname %>
+</li>        
+        <%} %>
+    </ul>
+</div>
