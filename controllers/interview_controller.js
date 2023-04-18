@@ -11,17 +11,31 @@ const Interview = require("../models/interview");
 
 module.exports.create = async function (req, resp) {
     let requestBody = req.body;
-    console.log(requestBody);
     try {
-        //await Interview.create({ requestBody });
-       
+        let interview = await Interview.create({
+            companyName: requestBody.companyName, position: requestBody.position,
+            interviewDate: requestBody.interviewDate, careerpagelink: requestBody.careerpagelink
+        });
+        if (interview) {
+            if (requestBody.student.length === 24) {
+                interview.student.push(requestBody.student);
+            }
+            else {
+                for (const student of requestBody.student) {
+                    interview.student.push(student);
+                }
+            }
+        }
+        interview.save();
+        let interviews = await Interview.find({}).populate('student');;
+        return resp.render("interview", { title: "Interviews", interviews: interviews });
     } catch (error) {
         console.log(error);
     }
 };
 
 module.exports.interview = async function (req, resp) {
-    let interviews = await Interview.find({});
+    let interviews = await Interview.find({}).populate('student');;
     return resp.render("interview", { title: "Interviews", interviews: interviews });
 }
 

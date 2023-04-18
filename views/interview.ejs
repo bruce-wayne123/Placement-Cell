@@ -1,12 +1,49 @@
-<link rel="stylesheet" href="/css/interview-list">
-<button id="addStudent" class="btn btn-primary"
-    onclick="window.location.href='http://localhost:8000/interviews/addInterview';">Add Interview</button>
-<div id="interview-list-container">
-    <ul>
-        <% for(interview of interviews){ %>
+<link rel="stylesheet" type="text/css" href="/assets/css/interview-list.css">
+
+<div id="container">
+    <button id="addStudent" class="btn btn-primary"
+        onclick="window.location.href='http://localhost:8000/interviews/addInterview';">Add Interview</button>
+    <div id="interview-list-container">
+        <div id="headerLabelContainer" class="row">
+            <div class="col-3">
+                Company Name
+            </div>
+            <div class="col-3">
+                Position
+            </div>
+            <div class="col-3">
+                Interview Date and time
+            </div>
+            <div class="col-3">
+                Students Alloted
+            </div>
+        </div>
+        <ul id="interviewResultsView" style="list-style-type:
+    none;  padding: 0px; margin-bottom: 0px;">
+            <% for(interview of interviews){ %>
 <li>
-<%= interview.companyname %>
+    <div class="row dataContainer" style="margin:10px">
+        <div class="col-3">
+            <a id="<%= interview._id %>" href="/results/{interview._id}">
+                 <%= interview.companyName %>
+            </a>
+           
+        </div>
+        <div class="col-3">
+            <%= interview.position %>
+        </div>
+        <div class="col-3">
+            <%= interview.interviewDate %>
+        </div>
+        <div class="col-3">
+            <% for(student of interview.student){ %>
+                <%= student.name %>
+                <%} %>
+        </div>
+
+    </div>
 </li>        
         <%} %>
     </ul>
+</div>
 </div>

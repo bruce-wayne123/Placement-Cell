@@ -1,0 +1,35 @@
+#container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#addStudent
+{
+    margin: 30px;
+   align-self: flex-end
+
+}
+
+#headerLabelContainer
+{
+    font-weight: bold;
+}
+
+#interviewResultsView
+{
+    margin-top: 10px;
+}
+
+.dataContainer
+{
+    align-items: center;
+    justify-content: center;
+}
+
+.col-3
+{
+  text-align: center;
+}
