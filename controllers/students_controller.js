@@ -27,7 +27,7 @@ module.exports.create = async function (req, resp) {
             console.log("Student already exists - Unable to create");
         }
 
-        return resp.render('dashboard', { title: "Dashboard"});
+        return resp.render('dashboard', { title: "Dashboard" });
     } catch (error) {
         console.log(error);
     }
@@ -35,4 +35,14 @@ module.exports.create = async function (req, resp) {
 
 module.exports.addStudent = async function (req, resp) {
     return resp.render("addstudent", { title: "Add Student" });
+}
+
+module.exports.updateInterviewData = function (req, resp) {
+    console.log("************************************Server data********************************", req);
+    // for (var key in req.body) {
+    //     if (req.body.hasOwnProperty(key)) {
+    //         item = req.body[key];
+    //         console.log(item);
+    //     }
+    // }
 }

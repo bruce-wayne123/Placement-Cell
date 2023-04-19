@@ -1,0 +1,63 @@
+#container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+#headerLabelContainer
+{
+    font-weight: bold;
+    justify-self: center;
+}
+
+#interviewResultsView
+{
+    display: flex;
+    margin-top: 10px;
+}
+
+.dataContainer
+{
+    align-items: center;
+    justify-self: center;
+}
+
+.col-3
+{
+  text-align: center;
+}
+
+#studentsContainer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    column-gap: 25px;
+}
+
+#studentDetailsContainer
+{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-self: end;
+    justify-items: end;
+    column-gap: 25px;
+   margin: 20px;
+}
+
+#interviewLabel
+{
+    text-align: center;
+}
+
+#updateButton
+{
+    margin-top: 10px;
+    height:40px;
+    width: 250px;
+}

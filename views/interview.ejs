@@ -1,21 +1,13 @@
-<link rel="stylesheet" type="text/css" href="/assets/css/interview-list.css">
+<link rel="stylesheet" type="text/css" href="/assets/css/interviewdetails.css">
 
 <div id="container">
-    <button id="addStudent" class="btn btn-primary"
-        onclick="window.location.href='http://localhost:8000/interviews/addInterview';">Add Interview</button>
     <div id="interview-list-container">
         <div id="headerLabelContainer" class="row">
-            <div class="col-3">
+            <div class="col-6">
                 Company Name
             </div>
-            <div class="col-3">
-                Position
-            </div>
-            <div class="col-3">
+            <div class="col-6">
                 Interview Date and time
-            </div>
-            <div class="col-3">
-                Students Alloted
             </div>
         </div>
         <ul id="interviewResultsView" style="list-style-type:
@@ -23,27 +15,17 @@
             <% for(interview of interviews){ %>
 <li>
     <div class="row dataContainer" style="margin:10px">
-        <div class="col-3">
-            <a id="<%= interview._id %>" href="/results/{interview._id}">
+        <div class="col-6">
+            <a id="<%= interview._id %>" href="/interviews/<%= interview._id %>">
                  <%= interview.companyName %>
-            </a>
-           
+            </a>     
         </div>
-        <div class="col-3">
-            <%= interview.position %>
-        </div>
-        <div class="col-3">
+        <div class="col-6">
             <%= interview.interviewDate %>
         </div>
-        <div class="col-3">
-            <% for(student of interview.student){ %>
-                <%= student.name %>
-                <%} %>
-        </div>
-
     </div>
 </li>        
         <%} %>
     </ul>
 </div>
-</div>
+</div> 
