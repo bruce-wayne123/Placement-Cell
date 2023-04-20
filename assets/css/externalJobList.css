@@ -7,19 +7,12 @@
     margin-top: 50px;
 }
 
-#addStudent
-{
-    margin: 30px;
-   align-self: flex-end
-
-}
-
 #headerLabelContainer
 {
     font-weight: bold;
 }
 
-#interviewResultsView
+#jobsResultsView
 {
     margin-top: 10px;
 }
@@ -28,9 +21,12 @@
 {
     align-items: center;
     justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+   
 }
 
-.col-3
+.col-6
 {
   text-align: center;
 }

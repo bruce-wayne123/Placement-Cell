@@ -25,7 +25,7 @@ const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 //const customMiddleware = require("./config/middleware");
 const route = require('./routes/index');
-
+app.use(express.json());
 app.set("view engine", "ejs");
 app.set("views", "./views");
 app.use(session({

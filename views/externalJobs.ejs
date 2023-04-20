@@ -1,27 +1,24 @@
-<link rel="stylesheet" type="text/css" href="/assets/css/interview-list.css">
-
+<link rel="stylesheet" type="text/css" href="/assets/css/externalJobList.css">
 <div id="container">
     <div id="interview-list-container">
         <div id="headerLabelContainer" class="row">
             <div class="col-6">
-                Company Name
+                Position
             </div>
             <div class="col-6">
-                Interview Date and time
+                Company
             </div>
         </div>
-        <ul id="interviewResultsView" style="list-style-type:
+        <ul id="jobsResultsView" style="list-style-type:
     none;  padding: 0px; margin-bottom: 0px;">
-            <% for(interview of interviews){ %>
+            <% for(job of jobs){ %>
 <li>
     <div class="row dataContainer" style="margin:10px">
         <div class="col-6">
-            <a id="<%= interview._id %>" href="/interviews/<%= interview._id %>">
-                 <%= interview.companyName %>
-            </a>     
+           <a href="  <%= job.link %>"> <%= job.title %>  </a>
         </div>
         <div class="col-6">
-            <%= interview.interviewDate %>
+            <%= job.company %>
         </div>
     </div>
 </li>        
