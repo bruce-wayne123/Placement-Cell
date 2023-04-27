@@ -9,4 +9,5 @@ router.get("/getStudents", studentsController.getStudents);
 router.get("/addstudent", studentsController.addStudent);
 router.post("/create", studentsController.create);
 router.post("/updateInterviewData", studentsController.updateInterviewData);
+router.get("/downloadData", studentsController.downloadData);
 module.exports = router;

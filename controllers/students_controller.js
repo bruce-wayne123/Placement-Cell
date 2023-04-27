@@ -1,6 +1,9 @@
 const Student = require("../models/student");
-const Employee = require("../models/employee");
-
+const Interview = require("../models/interview");
+const Results = require("../models/results");
+const convertor = require('objects-to-csv');
+const mongoose = require("mongoose");
+const fs = require('fs');
 module.exports.getStudents = async function name(req, resp) {
     try {
         let studentsList = await Student.find({});
@@ -20,7 +23,10 @@ module.exports.create = async function (req, resp) {
         if (student) {
             await Student.create({
                 name: requestBody.name, email: requestBody.email,
-                batch: requestBody.batch, college: requestBody.college, placementStatus: "Didn’t Attempt"
+                batch: requestBody.batch, college: requestBody.college,
+                dsa: "0", webd: "0", react: "0",
+                placementStatus: "Didn’t Attempt"
+
             });
         }
         else {
@@ -45,4 +51,79 @@ module.exports.updateInterviewData = async function (req, resp) {
             dbStudent.save();
         }
     }
-}   
+}
+
+
+module.exports.downloadData = async function (req, res) {
+    const studentList = await Student.find({});
+    const dataPresent = [];
+    for (var i = 0; i < studentList.length; i++) {
+        const student = studentList[i];
+        let studentData = {
+            StudentId: student.id,
+            Name: student.name,
+            Email: student.email,
+            Batch: student.batch,
+            College: student.college,
+            PlacementStatus: student.placementStatus
+        }
+        let interviewData = await Interview.find({});
+        for (const interview of interviewData) {
+            let studentArray = interview.student;
+            let searchStudent = studentArray.includes(student.id);
+            if (searchStudent) {
+                studentData.CompanyName = interview.companyName;
+                studentData.InterviewDate = interview.interviewDate;
+            }
+        }
+        let results = await Results.find({});
+        if (results) {
+            studentData.DSAScore = 0;
+            studentData.WebDScore = 0;
+            studentData.ReactScore = 0;
+        }
+
+        else {
+
+        }
+        []
+
+        // for (var j = 0; j < student.interviews.length; j++) {
+        //     const id = student.interviews[j];
+        //     const interviewData = await Interview.findById(id);
+        //     //find result
+        //     var result = "On Hold";
+        //     const resultIndex = interviewData.result.indexOf(student.id);
+        //     if (resultIndex != -1) {
+        //         const resultData = await Result.find({ studentId: interviewData.result[resultIndex] });
+        //         for (var k = 0; k < resultData.length; k++) {
+        //             if (resultData[k].interviewId == interviewData.id) {
+        //                 result = resultData[k].result;
+        //                 break;
+        //             }
+        //         }
+        //     }
+        //     const list = {
+        //         StudentId: student.id,
+        //         Batch: student.batch,
+        //         Name: student.name,
+        //         Email: student.email,
+        //         Status: student.status,
+        //         College: student.college,
+        //         DSA: student.DSA_FinalScore,
+        //         WEBD: student.WebD_FinalScore,
+        //         REACT: student.React_FinalScore,
+        //         CompanyName: interviewData.companyName,
+        //         InterviewDate: interviewData.date.toString().substring(4, 15),
+        //         Result: result
+        //     };
+        dataPresent.push(studentData);
+        // }
+    }
+    // const csv = new convertor(dataPresent);
+    // await csv.toDisk('./studentData.csv');
+    // return res.download('./studentData.csv', () => {
+    //     //for deleting file
+    //     fs.unlinkSync('./studentData.csv');
+    // });
+}

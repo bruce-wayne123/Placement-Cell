@@ -49,9 +49,9 @@ module.exports.destroySession = function (req, resp) {
         if (err) { console.log(err); }
         // req.flash("success", 'You have logged out !');
         resp.redirect('/');
-     });
+    });
 };
 
 module.exports.dashboard = async function (req, resp) {
-    return resp.render('dashboard', { title: "Dashboard"});
+    return resp.render('dashboard', { title: "Dashboard" });
 }

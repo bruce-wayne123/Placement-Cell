@@ -1,0 +1,4 @@
+StudentId,Name,Email,Batch,College,PlacementStatus,CompanyName,InterviewDate
+643d22601d0cefdbdcc56964,Arik,arik@gmail.com,123,KOPW,Pass,CTS,1681917420000
+643d46f0ece048e7f9e4ea23,Marlin,marlin@gmail.com,2015,LOP,Pass,CTS,1681917420000
+643d46feece048e7f9e4ea2a,James,james@gmail.com,2014,UUY,Fail,CTS,1681917420000

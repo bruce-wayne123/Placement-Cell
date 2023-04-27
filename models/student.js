@@ -18,6 +18,18 @@ const studentSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        dsa: {
+            type: String,
+            required: true,
+        },
+        webd: {
+            type: String,
+            required: true,
+        },
+        react: {
+            type: String,
+            required: true,
+        },
         placementStatus:
         {
             type: String,
