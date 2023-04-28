@@ -6,7 +6,6 @@ async function Login() {
             url: '/users/createSession',
             data: newPostForm.serialize(),
             success: function (data) {
-                console.log("Post API successfull")
             }, error: function (error) {
                 console.log(error.responseText);
             }

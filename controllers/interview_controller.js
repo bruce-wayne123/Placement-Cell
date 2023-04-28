@@ -1,14 +1,5 @@
 const Student = require("../models/student");
 const Interview = require("../models/interview");
-
-// module.exports.getStudents = async function name(req, resp) {
-//     try {
-//         let interviews = await Interview.find({});
-//     } catch (error) {
-//         console.log(error);
-//     }
-// }
-
 module.exports.create = async function (req, resp) {
     let requestBody = req.body;
     try {
@@ -27,8 +18,7 @@ module.exports.create = async function (req, resp) {
             }
         }
         interview.save();
-        let interviews = await Interview.find({}).populate('student');;
-        return resp.render("interview", { title: "Interviews", interviews: interviews });
+        return resp.redirect('/interviews/getInterview');
     } catch (error) {
         console.log(error);
     }
@@ -50,10 +40,7 @@ module.exports.addInterview = async function (req, resp) {
 }
 
 module.exports.getExternalJobs = async function (req, resp) {
-    var url = "https://jooble.org/api/";
-    var key = "1004380f-dc7b-4b8c-b695-cc70f5252ea8";
-    var params = "{ keywords: 'it', location: 'Bern'}";
-    let apiURL = url + key;
+    req.flash("success", "Post published");
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
@@ -74,6 +61,6 @@ module.exports.getExternalJobs = async function (req, resp) {
         .then(function (result) {
             let jsonResult = JSON.parse(result);
             return resp.render("externalJobs", { title: "Jobs list", jobs: jsonResult.jobs });
-           })
+        })
         .catch(error => console.log('error', error));
 }

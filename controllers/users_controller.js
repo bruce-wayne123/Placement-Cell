@@ -1,4 +1,5 @@
 const Employee = require("../models/employee");
+const Toastify = require("toastify-js");
 module.exports.login = function (req, resp) {
     if (req.isAuthenticated()) {
         let dashboardURL = `/users/dashboard/${req.user.id}`;

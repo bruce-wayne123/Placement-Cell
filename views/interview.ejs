@@ -1,6 +1,10 @@
 <link rel="stylesheet" type="text/css" href="/assets/css/interview-list.css">
 
 <div id="container">
+    <button id="addInterviewButton" class="btn btn-primary"
+        onclick="window.location.href = '/interviews/addInterview';">Add
+        Interview</button>
+    <% if(interviews){ %>
     <div id="interview-list-container">
         <div id="headerLabelContainer" class="row">
             <div class="col-6">
@@ -28,4 +32,5 @@
         <%} %>
     </ul>
 </div>
+<%} %>
 </div> 

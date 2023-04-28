@@ -65,7 +65,10 @@ module.exports.downloadData = async function (req, res) {
             Email: student.email,
             Batch: student.batch,
             College: student.college,
-            PlacementStatus: student.placementStatus
+            PlacementStatus: student.placementStatus,
+            DSAScore: student.dsa,
+            WebDScore: student.webd,
+            ReactScore: student.react
         }
         let interviewData = await Interview.find({});
         for (const interview of interviewData) {
@@ -76,18 +79,6 @@ module.exports.downloadData = async function (req, res) {
                 studentData.InterviewDate = interview.interviewDate;
             }
         }
-        let results = await Results.find({});
-        if (results) {
-            studentData.DSAScore = 0;
-            studentData.WebDScore = 0;
-            studentData.ReactScore = 0;
-        }
-
-        else {
-
-        }
-        []
-
         // for (var j = 0; j < student.interviews.length; j++) {
         //     const id = student.interviews[j];
         //     const interviewData = await Interview.findById(id);
@@ -120,10 +111,10 @@ module.exports.downloadData = async function (req, res) {
         dataPresent.push(studentData);
         // }
     }
-    // const csv = new convertor(dataPresent);
-    // await csv.toDisk('./studentData.csv');
-    // return res.download('./studentData.csv', () => {
-    //     //for deleting file
-    //     fs.unlinkSync('./studentData.csv');
-    // });
+    const csv = new convertor(dataPresent);
+    await csv.toDisk('./studentData.csv');
+    return res.download('./studentData.csv', () => {
+        //for deleting file
+        fs.unlinkSync('./studentData.csv');
+    });
 }

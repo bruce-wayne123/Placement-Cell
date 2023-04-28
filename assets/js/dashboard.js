@@ -6,7 +6,6 @@ async function GetStudents() {
     let studentsList = studentsJSON.students;
 
     studentsList.forEach(student => {
-
         addToList(student);
     });
 }

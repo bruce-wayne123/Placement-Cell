@@ -5,6 +5,7 @@
     <title>
 
     </title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css"
         integrity="sha512-NXUhxhkDgZYOMjaIgd89zF2w51Mub53Ru3zCNp5LTlEzMbNNAjTjDbpURYGS5Mop2cU4b7re1nOIucsVlrx9fA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -33,6 +34,28 @@
                         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
                         crossorigin="anonymous"></script>
                     <script src="https://kit.fontawesome.com/f12acca0d4.js" crossorigin="anonymous"></script>
+                    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+                    <!-- <script>
+                        const flash = require("connect-flash");
+                        if (flash.success && flash.success.length > 0) {
+                            new Noty({
+                                theme: "relax",
+                                text: "<%= flash.success %>",
+                                type: "success",
+                                timeout: 1500
+                            }).show();
+
+                        }
+                        if (flash.error && flash.error.length > 0) {
+                            new Noty({
+                                theme: "relax",
+                                text: "<%= flash.error %>",
+                                type: "error",
+                                timeout: 1500
+                            }).show();
+
+                        }
+                    </script> -->
 </body>
 
 </html>
