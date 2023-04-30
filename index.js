@@ -48,10 +48,10 @@ app.use(customMiddleware.setFlash);
 app.use("/", route);
 
 
-app.listen(portNo, function (error) {
+app.listen(portNo, '0.0.0.0', function (error) {
     if (error) {
         console.log(`Error in running server on portNo : ${portNo}`);
         return;
     }
     console.log(`Server is running on port : ${portNo}`);
-});
+}); 
