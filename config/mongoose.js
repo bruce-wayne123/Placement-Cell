@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-//mongoose.connect("mongodb://127.0.0.1/placement_dev");
-const url = `mongodb+srv://ckent8040:Google%40123@cluster0.0eq8is5.mongodb.net/?retryWrites=true&w=majority`;
+const url = `mongodb+srv://ckent8040:Google%40123@cluster0.0eq8is5.mongodb.net/test?retryWrites=true&w=majority`;
 const connectionParams = {
     useNewUrlParser: true,
     useUnifiedTopology: true
