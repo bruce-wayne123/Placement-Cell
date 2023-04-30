@@ -3,7 +3,7 @@ var studentsListView = document.getElementById("studentsListView");
 
 //Get students from database
 async function GetStudents() {
-    let studentsAPIResponse = await fetch('http://localhost:8000/students/getStudents');
+    let studentsAPIResponse = await fetch('http://https://placementcell-aucz.onrender.com/students/getStudents');
     let studentsJSON = await studentsAPIResponse.json();
     let studentsList = studentsJSON.students;
 
