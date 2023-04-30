@@ -1,15 +1,12 @@
-#container
-{
-    display: flex;
-    flex-direction: column;
-    row-gap: 30px;
-    justify-content: center;
-    align-items: center;
+#container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
-
-#addStudent
-{
-    margin-top: 30px;
-    justify-content: end;
+#addStudent {
+  margin-top: 30px;
+  justify-content: end;
 }

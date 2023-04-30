@@ -3,7 +3,6 @@ const router = express.Router();
 const passport = require("passport");
 const session = require("express-session");
 const usersController = require("../controllers/users_controller");
-//router.post('/login', usersController.login);
 router.get('/login', usersController.login);
 router.get('/logout', usersController.destroySession);
 router.get('/signup', usersController.signup);

@@ -1,5 +1,7 @@
 
 var studentsListView = document.getElementById("studentsListView");
+
+//Get students from database
 async function GetStudents() {
     let studentsAPIResponse = await fetch('http://localhost:8000/students/getStudents');
     let studentsJSON = await studentsAPIResponse.json();
@@ -10,6 +12,7 @@ async function GetStudents() {
     });
 }
 
+//Add each student in DOM list
 function addToList(student) {
     const li = document.createElement("li");
 

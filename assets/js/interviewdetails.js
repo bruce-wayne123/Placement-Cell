@@ -4,7 +4,6 @@ async function UpdateDetails() {
   $("select").each(function () {
     interviewData.push({ studentId: this.id, interviewStatus: this.value });
   });
-  let interviewJSON = JSON.stringify(interviewData);
   const request = new Request('/students/updateInterviewData', {
     method: 'POST',
     body: JSON.stringify(interviewData),
