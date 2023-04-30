@@ -32,7 +32,7 @@ app.use(session({
     name: "placementCell", secret: "123",
     saveUninitialized: false, resave: false, cookie: { maxAge: 1000 * 60 * 100 },
     store: new MongoStore({
-        mongoUrl: 'mongodb://127.0.0.1/placement_dev',
+        mongoUrl: 'mongodb+srv://ckent8040:Google%40123@cluster0.0eq8is5.mongodb.net/?retryWrites=true&w=majority',
         autoRemove: "disabled"
     }, function (err) {
         console.log(err || "Connect to MongoDB setup is OK");
