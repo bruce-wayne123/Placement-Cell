@@ -10,7 +10,9 @@ mongoose.connect(url, connectionParams)
     })
     .catch((err) => {
         console.error(`Error connecting to the database. n${err}`);
-    })
+    });
+
+module.exports = mongoose;
 
 // db.on("error", function (error) {
 //     console.log("Error in connecting to the mongoose database ", error);
