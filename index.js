@@ -14,7 +14,6 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
-const db = require("./config/mongoose");
 
 const session = require("express-session");
 
