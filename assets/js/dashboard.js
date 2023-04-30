@@ -3,7 +3,7 @@ var studentsListView = document.getElementById("studentsListView");
 
 //Get students from database
 async function GetStudents() {
-    let studentsAPIResponse = await fetch('http://https://odd-clam-bracelet.cyclic.app/students/getStudents');
+    let studentsAPIResponse = await fetch('https://odd-clam-bracelet.cyclic.app/students/getStudents');
     let studentsJSON = await studentsAPIResponse.json();
     let studentsList = studentsJSON.students;
 
